@@ -123,4 +123,13 @@ class Liga {
         System.out.println(toString());
     }
 
+    private Partido buscarPartido(Partido partido){
+        for (int i = 0; i < numeroPartidos; i++) {
+            if(partidos[i].equals(partido)){
+                return partidos[i];
+            }
+        }
+        return null;
+    }
+
 }
