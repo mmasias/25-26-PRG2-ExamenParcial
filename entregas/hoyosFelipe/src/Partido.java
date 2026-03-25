@@ -7,9 +7,15 @@ class Equipo {
     private int numeroJugadores;
     private int puntos;
 
-    public Equipo(String nombre, String color, int numeroJugadores)
+    public Equipo(String nombre, String color, int numeroJugadores){
+        assert nombre != null;
+        assert color != null;
+        assert numeroJugadores > 0;
+    }
 
-    public Equipo(String nombre, String color)
+    public Equipo(String nombre, String color){
+        
+    }
 
     public Equipo()
 
