@@ -169,4 +169,12 @@ class Liga {
         clasificacion[i] = clasificacion[j];
         clasificacion[j] = aux;
     }
+
+    private void copiarEquipos(Liga liga){
+        for (int i = 0; i < liga.numeroEquipos; i++) {
+            this.equipos[i] = liga.equipos[i].clone();
+        }
+        
+        this.numeroEquipos = liga.numeroEquipos;
+    }
 }
