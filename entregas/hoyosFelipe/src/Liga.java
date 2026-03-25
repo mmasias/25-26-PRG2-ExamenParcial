@@ -143,4 +143,14 @@ class Liga {
         }
     }
 
+    private Equipo[] copiarEquipos(){
+        Equipo[] copia = new Equipo[numeroEquipos];
+
+        for (int i = 0; i < numeroEquipos; i++) {
+            copia[i] = equipos[i].clone();
+        }
+        
+        return copia;
+    }
+
 }
