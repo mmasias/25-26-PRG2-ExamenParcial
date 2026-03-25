@@ -1,22 +1,56 @@
 public class Liga {
-    private nombre;
-    private List<Partido> partidos = new ArrayList<>();
-    
+    private String nombre;
+    private Partido[] partidos;
+    private int totalPartidos;
+
+    private static final int MAX_PARTIDOS = 1000;
+
     public Liga(String nombre) {
         this.nombre = nombre;
+        this.partidos = new Partido[MAX_PARTIDOS];
+        this.totalPartidos = 0;
+    }
+
+    private void agregarPartido(Partido partido) {
+        if (totalPartidos < MAX_PARTIDOS) {
+            partidos[totalPartidos] = partido;
+            totalPartidos++;
+        } else {
+            System.out.println("No se pueden agregar más partidos.");
+        }
+    }
+
+    public void programarPartido(Partido partido) {
+        assert partido != null : "partido no puede ser null";
+        agregarPartido(partido);
+    }
+
+    public void listarPartidos() {
+        System.out.println("Partidos Programados:");
+        for (int i = 0; i < totalPartidos; i++) {
+            System.out.println(" - " + partidos[i]);
+        }
+    }
+
+    public void mostarPendientes() {
+        System.out.println("Partidos Pendientes:");
+        for (int i = 0; i < totalPartidos; i++) {
+            if (partidos[i].estaPendiente()) {
+                System.out.println(" - " + partidos[i]);
+            }
+        }
     }
 
     public void mostrarCalificacion() {
         System.out.println("Calificacion:");
-        for (Partido partido : partidos) {
+        for (int i = 0; i < totalPartidos; i++) {
+            Partido partido = partidos[i];
             if (!partido.estaPendiente()) {
                 Equipo equipo = partido.getGanador();
                 boolean yaMostrado = false;
 
-                for (Partido p : partidos) {
-                    if (p == partido) {
-                        break;
-                    }
+                for (int j = 0; j < i; j++) {
+                    Partido p = partidos[j];
                     if (!p.estaPendiente() && p.getGanador() == equipo) {
                         yaMostrado = true;
                         break;
@@ -24,40 +58,24 @@ public class Liga {
                 }
 
                 if (!yaMostrado) {
-                    int victorias = 0;
-                    for (Partido p : partidos) {
-                        if (!p.estaPendiente() && p.getGanador() == equipo) {
-                            victorias++;
-                        }
-                    }
+                    int victorias = contarVictorias(equipo);
                     System.out.println(" - " + equipo + " | victorias=" + victorias);
                 }
             }
         }
     }
 
-    public void listarPartidos() {
-        System.out.println("Partidos Programados:");
-        for (Partido partido : partidos) {
-            System.out.println(" - " + partido);
-        }
-    }
-
-    public void mostarPendientes() {
-        System.out.println("Partidos Pendientes:");
-        for (Partido partido : partidos) {
-            if (partido.estaPendiente()) {
-                System.out.println(" - " + partido);
+    private int contarVictorias(Equipo equipo) {
+        int victorias = 0;
+        for (int i = 0; i < totalPartidos; i++) {
+            if (!partidos[i].estaPendiente() && partidos[i].getGanador() == equipo) {
+                victorias++;
             }
         }
-    }
 
-    public void programarPartido(Partido partido) {
-        assert partido != null : "partido no puede ser null";
-        partidos.add(partido);
+        return victorias;
     }
 
     public void registrarResultado() {
-    
     }
 }
