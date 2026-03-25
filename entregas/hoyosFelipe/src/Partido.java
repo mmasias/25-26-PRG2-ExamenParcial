@@ -2,6 +2,13 @@ package vistas.liga;
 
 class Partido {
 
+    private Equipo local;
+    private Equipo visitante;
+    private Fecha fecha;
+    private int golesLocal;
+    private int golesVisitante;
+    private boolean jugado;   
+
     public Partido(Equipo local, Equipo visitante, Fecha fecha){}
 
     public Partido(Partido partido){}
