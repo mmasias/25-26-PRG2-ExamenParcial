@@ -39,7 +39,13 @@ class Fecha {
         return año;
     }
 
-    public boolean equals(Fecha fecha){}
+    public boolean equals(Fecha fecha){
+        assert fecha != null;
+        
+        return this.dia == fecha.dia &&
+               this.mes == fecha.mes &&
+               this.año == fecha.año;
+    }
 
     public String toString(){}
 
