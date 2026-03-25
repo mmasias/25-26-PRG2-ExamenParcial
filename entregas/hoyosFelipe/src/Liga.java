@@ -109,9 +109,13 @@ class Liga {
         }
     }
 
-    public void mostrarPartidos()
+    public void mostrarPartidos(){
+        for (int i = 0; i < numeroPartidos; i++) {
+            partidos[i].mostrar();
+        }
+    }
 
-    public String toString()
+    public String toString(){}
 
     public void mostrar()
 
