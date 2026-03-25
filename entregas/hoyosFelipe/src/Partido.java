@@ -19,7 +19,7 @@ class Equipo {
     }
 
     public Equipo(String nombre, String color){
-
+        this(nombre, color, 0 + 1);
     }
 
     public Equipo()
