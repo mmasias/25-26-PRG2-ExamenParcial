@@ -1,42 +1,49 @@
 package ponceKevin.src;
+import java.time.LocalDateTime;
 public class Partido {
-    partido(Equipo equipo1, Equipo equipo2,LocalDateTime fecha) {
+    private Equipo equipo1;
+    private Equipo equipo2;
+    private LocalDateTime fecha;
+    private int golesEquipo1;
+    private int golesEquipo2;
+    private boolean seCompletoELPartido = false;
+    public partido(Equipo equipo1, Equipo equipo2,LocalDateTime fecha) {
         
     }
 
-    void aumentarGoles(int numeroEquipo, int cantidDeGoles) {
+    public void aumentarGoles(int numeroEquipo, int cantidDeGoles) {
         
     }
 
-    void aumentarGoles(int numeroEquipo) {
+    public void aumentarGoles(int numeroEquipo) {
         
     }
 
-    boolean pasoLaFecha() {
+    public boolean pasoLaFecha() {
      
     }
 
-    boolean estaPendiente() {
+    public boolean estaPendiente() {
         
     }
 
-    Equipo getGanador() {
+    public Equipo getGanador() {
         
     }
 
-    int[] getGolesPorEquipo() {
+    public int[] getGolesPorEquipo() {
         
     }
 
-    int diasFaltantes() {
+    public int diasFaltantes() {
         
     }
 
-    int diasFaltantes(LocalDateTime fechaAComparar) {
+    public int diasFaltantes(LocalDateTime fechaAComparar) {
         
     }
 
-    String toString() {
+    public String toString() {
         
     }
 
