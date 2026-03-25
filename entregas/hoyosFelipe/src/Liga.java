@@ -6,7 +6,15 @@ class Liga {
     private int numeroEquipos;
     private int numeroPartidos;
     
-    public Liga(String nombre)
+    public Liga(String nombre){
+        assert nombre != null;
+
+        this.nombre = nombre;
+        this.equipos = new Equipo[100];
+        this.partidos = new Partido[200];
+        this.numeroEquipos = 0;
+        this.numeroPartidos = 0;
+    }
 
     public Liga()
 
