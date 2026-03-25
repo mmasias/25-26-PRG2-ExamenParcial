@@ -68,4 +68,8 @@ public class Partido {
         return equipo1.toString() + " vs " + equipo2.toString() + " | Fecha: " + fecha.toString() + " | Goles: " + golesEquipo1 + "-" + golesEquipo2;
     }
 
+    public void marcarComoCompleto() {
+        estaCompleto = true;
+    }
+
 }
