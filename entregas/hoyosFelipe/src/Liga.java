@@ -55,9 +55,19 @@ class Liga {
         return pendientes;
     }
 
-    public boolean equals(Liga liga)
+    public boolean equals(Liga liga){
+        assert liga !=null;
+        return this.nombre.equals(liga.nombre);
+    }
 
-    public void agregarEquipo(Equipo equipo)
+    public void agregarEquipo(Equipo equipo){
+        assert equipo != null;
+        assert numeroEquipos < equipos.length;
+        assert buscarEquipo(equipo.nombre()) == null;
+
+        equipos[numeroEquipos] = equipo;
+        numeroEquipos++;
+    }
 
     public void programarPartido(Equipo local, Equipo visitante, Fecha fecha)
 
