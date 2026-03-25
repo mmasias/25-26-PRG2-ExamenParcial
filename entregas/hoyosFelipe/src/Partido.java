@@ -51,7 +51,13 @@ class Equipo {
         return puntos;
     }
 
-    public boolean equals(Equipo equipo)
+    public boolean equals(Equipo equipo){
+        assert equipo != null;
+        return this.nombre.equals(equipo.nombre) &&
+               this.color.equals(equipo.color) &&
+               this.numeroJugadores == equipo.numeroJugadores &&
+               this.puntos == equipo.puntos;
+    }
 
     public boolean tieneMismoNombre(String nombre)
 
