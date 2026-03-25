@@ -16,11 +16,20 @@ class Liga {
         this.numeroPartidos = 0;
     }
 
-    public Liga()
+    public Liga(){
+        this("");
+    }
 
-    public Liga(Liga liga)
+    public Liga(Liga liga){
+        this(liga.nombre);
 
-    public Liga clone()
+        copirEquipos(liga);
+        copiarPartidos(liga);
+    }
+
+    public Liga clone(){
+        return new Liga(this);
+    }
 
     public String nombre()
 
