@@ -93,7 +93,12 @@ class Liga {
     }
 
     public void mostrarClasificacion(){
-        
+        Equipo[] clasificacio = copiarEquipos();
+        ordenarPorPuntos(clasificacion);
+
+        for(int i = 0; i < clasificacion.length; i++){
+            clasificacion[i].mostrar();
+        }
     }
 
     public void mostrarPartidosPendientes()
