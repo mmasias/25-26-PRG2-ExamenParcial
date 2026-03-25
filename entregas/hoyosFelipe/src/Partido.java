@@ -22,7 +22,9 @@ class Equipo {
         this(nombre, color, 0 + 1);
     }
 
-    public Equipo()
+    public Equipo(){
+        this("", "", 1);
+    }
 
     public Equipo(Equipo equipo)
 
