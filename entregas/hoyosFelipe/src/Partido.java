@@ -67,7 +67,14 @@ class Partido {
                 this.fecha.equals(partido.fecha);
     }
 
-    public void registrarResultado(int golesLocal, int golesVisitante){}
+    public void registrarResultado(int golesLocal, int golesVisitante){
+        assert golesLocal >= 0;
+        assert golesVisitante >= 0;
+
+        this.golesLocal = golesLocal;
+        this.golesVisitante = golesVisitante;
+        this.jugado = true;
+    }
 
     public String toString(){}
 
