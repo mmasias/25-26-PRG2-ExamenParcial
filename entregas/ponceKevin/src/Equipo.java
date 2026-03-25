@@ -5,6 +5,10 @@ public class Equipo {
 
     }
 
+    public Equipo(String nombre,String ciudad,int jugadores) {
+
+    }
+
     public void aumentarVictorias() {
 
     }
