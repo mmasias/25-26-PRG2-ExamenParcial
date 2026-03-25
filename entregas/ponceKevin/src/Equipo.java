@@ -21,11 +21,12 @@ public class Equipo {
         this.victorias += victorias;
     }
 
-    public void aumentarDerrotas() {
+    public void aumentarDerrotas(int derrotas) {
+        this.derrotas += derrotas;
 
     }
-    public void aumentarEmpates() {
-
+    public void aumentarEmpates(int empates) {
+        this.empates += empates;
     }
 
     public void actualizarTotal(int puntos) {
