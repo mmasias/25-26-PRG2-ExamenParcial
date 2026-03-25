@@ -60,7 +60,12 @@ class Partido {
         return !jugado;
     }
 
-    public boolean equals(Partido partido){}
+    public boolean equals(Partido partido){
+        assert partido != null;
+        return this.local.tieneMismoNombre(partido.loocal.nombre()) &&
+                this.visitante.tieneMismoNombre(partido.visitante.nombre()) &&
+                this.fecha.equals(partido.fecha);
+    }
 
     public void registrarResultado(int golesLocal, int golesVisitante){}
 
