@@ -11,10 +11,15 @@ class Equipo {
         assert nombre != null;
         assert color != null;
         assert numeroJugadores > 0;
+
+        this.nombre = nombre;
+        this.color = color;
+        this.numeroJugadores = numeroJugadores;
+        this.puntos = 0;
     }
 
     public Equipo(String nombre, String color){
-        
+
     }
 
     public Equipo()
