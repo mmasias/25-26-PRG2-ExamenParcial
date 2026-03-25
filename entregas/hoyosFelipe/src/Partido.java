@@ -31,7 +31,9 @@ class Equipo {
         this.puntos = equipo.puntos;
     }
 
-    public Equipo clone()
+    public Equipo clone(){
+        return new Equipo(this);
+    }
 
     public String nombre()
 
