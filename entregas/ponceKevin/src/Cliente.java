@@ -11,10 +11,9 @@ public class Cliente {
         Partido  pelatlanticoXgeek = new Partido(pelatlantico, geek, LocalDateTime.of(2024, 7, 1, 15, 0));
         unea.programarPartido(pelatlanticoXgeek);
         pelatlanticoXgeek.marcarComoCompleto();
-
+        unea.mostarPendientes();
         unea.registrarResultado();
         unea.listarPartidos();
-        unea.mostarPendientes();
         unea.mostrarCalificacion();
     }
 }
