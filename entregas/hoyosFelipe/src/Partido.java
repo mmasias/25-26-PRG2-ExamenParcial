@@ -21,9 +21,16 @@ class Partido {
         this.jugado = false;
     }
 
-    public Partido(Partido partido){}
+    public Partido(Partido partido){
+        this(partido.local, partido.visitante, partido.fecha);
+        if (partido.estaJugando()){
+            this.registrarResultado(partido.golesLocal, partido.golesVisitante);
+        }
+    }
 
-    public Partido clone(){}
+    public Partido clone(){
+        return new Partido(this);
+    }
 
     public Equipo local(){}
 
