@@ -214,4 +214,5 @@ class Liga {
 
             this.numeroPartidos = liga.numeroPartidos;
         }
+        
 }
