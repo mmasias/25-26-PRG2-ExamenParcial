@@ -59,7 +59,9 @@ class Equipo {
                this.puntos == equipo.puntos;
     }
 
-    public boolean tieneMismoNombre(String nombre)
+    public boolean tieneMismoNombre(String nombre){
+        
+    }
 
     public void sumarPuntos(int puntos)
 
