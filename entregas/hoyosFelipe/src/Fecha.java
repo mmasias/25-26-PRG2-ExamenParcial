@@ -41,14 +41,18 @@ class Fecha {
 
     public boolean equals(Fecha fecha){
         assert fecha != null;
-        
+
         return this.dia == fecha.dia &&
                this.mes == fecha.mes &&
                this.año == fecha.año;
     }
 
-    public String toString(){}
+    public String toString(){
+        return formatear(dia) + "/" + formatear(mes) + "/" + año;
+    }
 
-    public void mostrar(){}
+    public void mostrar(){
+        System.out.println(toString());
+    }
 
 }
