@@ -2,6 +2,11 @@ package vistas.liga;
 
 class Equipo {
 
+    private String nombre;
+    private String color;
+    private int numeroJugadores;
+    private int puntos;
+
     public Equipo(String nombre, String color, int numeroJugadores)
 
     public Equipo(String nombre, String color)
