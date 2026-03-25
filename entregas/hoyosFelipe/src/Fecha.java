@@ -23,13 +23,21 @@ class Fecha {
         this(fecha.dia, fecha.mes, fecha.año);
     }
 
-    public Fecha clone(){}
+    public Fecha clone(){
+        return new Fecha(this);
+    }
 
-    public int dia(){}
+    public int dia(){
+        return dia;
+    }
 
-    public int mes(){}
+    public int mes(){
+        return mes;
+    }
     
-    public int año(){}
+    public int año(){
+        return año;
+    }
 
     public boolean equals(Fecha fecha){}
 
