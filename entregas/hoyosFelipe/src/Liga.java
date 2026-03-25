@@ -69,7 +69,17 @@ class Liga {
         numeroEquipos++;
     }
 
-    public void programarPartido(Equipo local, Equipo visitante, Fecha fecha)
+    public void programarPartido(Equipo local, Equipo visitante, Fecha fecha){
+        assert local != null;
+        assert visitante != null;
+        assert fecha != null;
+        assert numeroPartidos < partidos.length;
+        assert buscarEquipo(local.nombre()) != null;
+        assert buscarEquipo(visitante.nombre()) != null;
+
+        partidos[numeroPartidos] = new Partido(local, visitante, fecha);
+        numeroPartidos++;
+    }
 
     public void registrarResultado(Partido partido, int golesLocal, int golesVisitante)
 
