@@ -1,11 +1,12 @@
 public class Equipo {
+    private String nombre;
+    private String 
 
-
-    public Equipo(String nombre, String ciudad) {
+    public Equipo(String nombre, String color) {
 
     }
 
-    public Equipo(String nombre,String ciudad,int jugadores) {
+    public Equipo(String nombre,String color,int jugadores) {
 
     }
 
