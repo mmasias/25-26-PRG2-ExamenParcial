@@ -1,12 +1,27 @@
 class Fecha {
     
-    public Fecha(int dia, int mes, int año) {}
+    private int dia;
+    private int mes;
+    private int año;
 
-    public Fecha(int dia, int mes) {}
+    public Fecha(int dia, int mes, int año) {
+        assert dia > 0 && dia <= 31;
+        assert mes > 0 && mes <= 12;
+
+        this.dia = dia;
+        this.mes = mes;
+        this.año = año;
+    }
+
+    public Fecha(int dia, int mes) {
+        this(dia, mes, 0);
+    }
 
     public Fecha(){}
 
-    public Fecha(Fecha fecha){}
+    public Fecha(Fecha fecha){
+        this(fecha.dia, fecha.mes, fecha.año);
+    }
 
     public Fecha clone(){}
 
@@ -21,5 +36,5 @@ class Fecha {
     public String toString(){}
 
     public void mostrar(){}
-    
+
 }
