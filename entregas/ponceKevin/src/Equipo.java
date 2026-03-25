@@ -17,8 +17,8 @@ public class Equipo {
         this.jugadores = jugadores;
     }
 
-    public void aumentarVictorias() {
-
+    public void aumentarVictorias(int victorias) {
+        this.victorias += victorias;
     }
 
     public void aumentarDerrotas() {
