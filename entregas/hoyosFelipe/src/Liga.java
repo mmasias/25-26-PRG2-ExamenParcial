@@ -132,4 +132,15 @@ class Liga {
         return null;
     }
 
+    private void actualizarPuntos(Partido partido){
+        if(partido.golesLocal() > partido.golesVisitante()){
+            partido.local().sumarPuntos(3);
+        } else if (partido.golesLocal() < partido.golesVisitante()) {
+            partido.visitante().sumarPuntos(3);
+        } else {
+            partido.local().sumarPuntos(1);
+            partido.visitante().sumarPuntos(1);
+        }
+    }
+
 }
