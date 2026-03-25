@@ -26,7 +26,10 @@ class Equipo {
         this("", "", 1);
     }
 
-    public Equipo(Equipo equipo)
+    public Equipo(Equipo equipo){
+        this(equipo.nombre, equipo.color, equipo.numeroJugadores);
+        this.puntos = equipo.puntos;
+    }
 
     public Equipo clone()
 
