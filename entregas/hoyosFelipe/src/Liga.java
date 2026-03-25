@@ -81,9 +81,20 @@ class Liga {
         numeroPartidos++;
     }
 
-    public void registrarResultado(Partido partido, int golesLocal, int golesVisitante)
+    public void registrarResultado(Partido partido, int golesLocal, int golesVisitante){
+        Partido partidoLiga = buscarPartido(partido);
 
-    public void mostrarClasificacion()
+        assert partido != null;
+        assert partidoLiga != null;
+        assert partidoLiga.estaPendiente();
+
+        partidoLiga.regustrarResultado(golesLocal, golesVisitante);
+        actualizarPuntos(partidoLiga);
+    }
+
+    public void mostrarClasificacion(){
+        
+    }
 
     public void mostrarPartidosPendientes()
 
