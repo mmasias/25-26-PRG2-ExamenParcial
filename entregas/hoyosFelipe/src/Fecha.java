@@ -55,4 +55,12 @@ class Fecha {
         System.out.println(toString());
     }
 
+    private String formatear(int valor){
+        if(valor < 10){
+            return "0" + valor;
+        }
+        return "" + valor;
+    }
+
 }
+
