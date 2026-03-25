@@ -182,4 +182,17 @@ class Liga {
         for (int i = 0; i < liga.numeroPartidos; i++) {
             Equipo local = buscarEquipo(liga.partidos[i].local().nombre());
             Equipo visitante = buscarEquipo(liga.partidos[i].visitante().nombre());
+
+            this.partidos[i] = new Partido(local, visitante, liga.partidos[i].fecha());
+
+            if(liga.partidos[i].estaJugando()){
+                this.partidos[i].regustrarResultado(
+                    liga.partidos[i].golesLocal(), 
+                    liga.partidos[i].golesVisitante()
+                );
+            }
+        }
+
+            this.numeroPartidos = liga.numeroPartidos;
+        }
 }
