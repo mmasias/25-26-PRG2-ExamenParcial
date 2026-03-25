@@ -60,10 +60,14 @@ class Equipo {
     }
 
     public boolean tieneMismoNombre(String nombre){
-        
+        assert nombre != null;
+        return this.nombre.equals(nombre);
     }
 
-    public void sumarPuntos(int puntos)
+    public void sumarPuntos(int puntos){
+        assert puntos >= 0;
+        this.puntos += puntos;
+    }
 
     public void reiniciarPuntos()
 
