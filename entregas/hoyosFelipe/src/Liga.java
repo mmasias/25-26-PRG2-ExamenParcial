@@ -174,7 +174,12 @@ class Liga {
         for (int i = 0; i < liga.numeroEquipos; i++) {
             this.equipos[i] = liga.equipos[i].clone();
         }
-        
+
         this.numeroEquipos = liga.numeroEquipos;
     }
+
+    private void copiarPartidos(Liga liga){
+        for (int i = 0; i < liga.numeroPartidos; i++) {
+            Equipo local = buscarEquipo(liga.partidos[i].local().nombre());
+            Equipo visitante = buscarEquipo(liga.partidos[i].visitante().nombre());
 }
