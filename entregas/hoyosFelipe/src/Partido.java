@@ -2,83 +2,34 @@ package vistas.liga;
 
 class Equipo {
 
-    private String nombre;
-    private String color;
-    private int numeroJugadores;
-    private int puntos;
+    public Equipo(String nombre, String color, int numeroJugadores)
 
-    public Equipo(String nombre, String color, int numeroJugadores){
-        assert nombre != null;
-        assert color != null;
-        assert numeroJugadores > 0;
+    public Equipo(String nombre, String color)
 
-        this.nombre = nombre;
-        this.color = color;
-        this.numeroJugadores = numeroJugadores;
-        this.puntos = 0;
-    }
+    public Equipo()
 
-    public Equipo(String nombre, String color){
-        this(nombre, color, 0 + 1);
-    }
+    public Equipo(Equipo equipo)
 
-    public Equipo(){
-        this("", "", 1);
-    }
+    public Equipo clone()
 
-    public Equipo(Equipo equipo){
-        this(equipo.nombre, equipo.color, equipo.numeroJugadores);
-        this.puntos = equipo.puntos;
-    }
+    public String nombre()
 
-    public Equipo clone(){
-        return new Equipo(this);
-    }
+    public String color()
 
-    public String nombre(){
-        return nombre;
-    }
+    public int numeroJugadores()
 
-    public String color(){
-        return color;
-    }
+    public int puntos()
 
-    public int numeroJugadores(){
-        return numeroJugadores;
-    }
+    public boolean equals(Equipo equipo)
 
-    public int puntos(){
-        return puntos;
-    }
+    public boolean tieneMismoNombre(String nombre)
 
-    public boolean equals(Equipo equipo){
-        assert equipo != null;
-        return this.nombre.equals(equipo.nombre) &&
-               this.color.equals(equipo.color) &&
-               this.numeroJugadores == equipo.numeroJugadores &&
-               this.puntos == equipo.puntos;
-    }
+    public void sumarPuntos(int puntos)
 
-    public boolean tieneMismoNombre(String nombre){
-        assert nombre != null;
-        return this.nombre.equals(nombre);
-    }
+    public void reiniciarPuntos()
 
-    public void sumarPuntos(int puntos){
-        assert puntos >= 0;
-        this.puntos += puntos;
-    }
+    public String toString()
 
-    public void reiniciarPuntos(){
-        puntos = 0;
-    }
-
-    public String toString(){
-        return  nombre = + " - " + color + " - " + numeroJugadores + " jugadores - " + puntos + " pts"; 
-    }
-
-    public void mostrar(){
-        System.out.println(this.toString());
-    }
+    public void mostrar()
 
 }
