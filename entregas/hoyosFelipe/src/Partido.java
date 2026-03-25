@@ -35,13 +35,21 @@ class Equipo {
         return new Equipo(this);
     }
 
-    public String nombre()
+    public String nombre(){
+        return nombre;
+    }
 
-    public String color()
+    public String color(){
+        return color;
+    }
 
-    public int numeroJugadores()
+    public int numeroJugadores(){
+        return numeroJugadores;
+    }
 
-    public int puntos()
+    public int puntos(){
+        return puntos;
+    }
 
     public boolean equals(Equipo equipo)
 
