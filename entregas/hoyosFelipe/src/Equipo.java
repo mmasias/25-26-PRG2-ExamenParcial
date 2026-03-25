@@ -1,5 +1,3 @@
-package vistas.liga;
-
 class Equipo {
 
     private String nombre;

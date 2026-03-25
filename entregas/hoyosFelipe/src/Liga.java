@@ -1,5 +1,3 @@
-package vistas.liga;
-
 class Liga {
     
     public Liga(String nombre)

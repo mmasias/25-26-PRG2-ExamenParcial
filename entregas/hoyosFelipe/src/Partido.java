@@ -1,5 +1,3 @@
-package vistas.liga;
-
 class Partido {
 
     private Equipo local;
@@ -9,7 +7,19 @@ class Partido {
     private int golesVisitante;
     private boolean jugado;   
 
-    public Partido(Equipo local, Equipo visitante, Fecha fecha){}
+    public Partido(Equipo local, Equipo visitante, Fecha fecha){
+        assert local != null;
+        assert visitante != null;
+        assert fecha != null;
+        assert !local.tieneMismoNombre(visitante);
+
+        this.local = local.clone();
+        this.visitante = visitante.clone();
+        this.fecha = fecha.clone();
+        this.golesLocal = 0;
+        this.golesVisitante = 0;
+        this.jugado = false;
+    }
 
     public Partido(Partido partido){}
 
