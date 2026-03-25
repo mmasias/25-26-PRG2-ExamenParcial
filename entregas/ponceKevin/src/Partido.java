@@ -1,6 +1,6 @@
-package ponceKevin.src;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+
 public class Partido {
     private Equipo equipo1;
     private Equipo equipo2;
@@ -8,7 +8,7 @@ public class Partido {
     private int golesEquipo1;
     private int golesEquipo2;
     private boolean estaCompleto = false;
-    public partido(Equipo equipo1, Equipo equipo2,LocalDateTime fecha) {
+    public Partido(Equipo equipo1, Equipo equipo2,LocalDateTime fecha) {
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
         this.fecha = fecha;        
