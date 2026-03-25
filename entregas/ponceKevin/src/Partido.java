@@ -8,7 +8,9 @@ public class Partido {
     private int golesEquipo2;
     private boolean seCompletoELPartido = false;
     public partido(Equipo equipo1, Equipo equipo2,LocalDateTime fecha) {
-        
+        this.equipo1 = equipo1;
+        this.equipo2 = equipo2;
+        this.fecha = fecha;        
     }
 
     public void aumentarGoles(int numeroEquipo, int cantidDeGoles) {
