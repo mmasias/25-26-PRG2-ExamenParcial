@@ -32,19 +32,33 @@ class Partido {
         return new Partido(this);
     }
 
-    public Equipo local(){}
+    public Equipo local(){
+        return local;
+    }
 
-    public Equipo visitante(){}
+    public Equipo visitante(){
+        return visitante;
+    }
 
-    public Fecha fecha(){}
+    public Fecha fecha(){
+        return fecha.clone();
+    }
 
-    public int golesLocal(){}
+    public int golesLocal(){
+        return golesLocal;
+    }
 
-    public int golesVisitante(){}
+    public int golesVisitante(){
+        return golesVisitante;
+    }
 
-    public boolean estaJugando(){}
+    public boolean estaJugando(){
+        return jugado;
+    }
 
-    public boolean estaPendiente(){}
+    public boolean estaPendiente(){
+        return !jugado;
+    }
 
     public boolean equals(Partido partido){}
 
