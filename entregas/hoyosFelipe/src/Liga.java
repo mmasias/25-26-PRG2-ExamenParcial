@@ -23,7 +23,7 @@ class Liga {
     public Liga(Liga liga){
         this(liga.nombre);
 
-        copirEquipos(liga);
+        copiarEquipos(liga);
         copiarPartidos(liga);
     }
 
@@ -76,24 +76,26 @@ class Liga {
         assert numeroPartidos < partidos.length;
         assert buscarEquipo(local.nombre()) != null;
         assert buscarEquipo(visitante.nombre()) != null;
+        assert !local.tieneMismoNombre(visitante.nombre());
 
         partidos[numeroPartidos] = new Partido(local, visitante, fecha);
         numeroPartidos++;
     }
 
     public void registrarResultado(Partido partido, int golesLocal, int golesVisitante){
+        assert partido != null;
+
         Partido partidoLiga = buscarPartido(partido);
 
-        assert partido != null;
         assert partidoLiga != null;
         assert partidoLiga.estaPendiente();
 
-        partidoLiga.regustrarResultado(golesLocal, golesVisitante);
+        partidoLiga.registrarResultado(golesLocal, golesVisitante);
         actualizarPuntos(partidoLiga);
     }
 
     public void mostrarClasificacion(){
-        Equipo[] clasificacio = copiarEquipos();
+        Equipo[] clasificacion = copiarEquipos();
         ordenarPorPuntos(clasificacion);
 
         for(int i = 0; i < clasificacion.length; i++){
@@ -133,13 +135,19 @@ class Liga {
     }
 
     private void actualizarPuntos(Partido partido){
+        Equipo local = buscarEquipo(partido.local().nombre());
+        Equipo visitante = buscarEquipo(partido.visitante().nombre());
+
+        assert local != null;
+        assert visitante != null;
+
         if(partido.golesLocal() > partido.golesVisitante()){
-            partido.local().sumarPuntos(3);
+            local.sumarPuntos(3);
         } else if (partido.golesLocal() < partido.golesVisitante()) {
-            partido.visitante().sumarPuntos(3);
+            visitante.sumarPuntos(3);
         } else {
-            partido.local().sumarPuntos(1);
-            partido.visitante().sumarPuntos(1);
+            local.sumarPuntos(1);
+            visitante.sumarPuntos(1);
         }
     }
 
@@ -155,19 +163,30 @@ class Liga {
 
     private void ordenarPorPuntos(Equipo[] clasificacion){
         for (int i = 0; i < clasificacion.length - 1; i++) {
-            for (int j = i + 1 ; j < clasificacion.length - 1; j++) {
-                     if (clasificacion[j].puntos() < clasificacion[i].puntos()) {
-                         intercambiar(clasificacion, i, j);
-                     }
-
+            for (int j = i + 1 ; j < clasificacion.length; j++) {
+                if (clasificacion[j].puntos() > clasificacion[i].puntos()) {
+                    intercambiar(clasificacion, i, j);
                 }
             }
         }
+    }
 
     private void intercambiar(Equipo[] clasificacion, int i, int j){
         Equipo aux = clasificacion[i];
         clasificacion[i] = clasificacion[j];
         clasificacion[j] = aux;
+    }
+
+    private Equipo buscarEquipo(String nombre){
+        assert nombre != null;
+
+        for (int i = 0; i < numeroEquipos; i++) {
+            if (equipos[i].tieneMismoNombre(nombre)) {
+                return equipos[i];
+            }
+        }
+
+        return null;
     }
 
     private void copiarEquipos(Liga liga){
@@ -186,7 +205,7 @@ class Liga {
             this.partidos[i] = new Partido(local, visitante, liga.partidos[i].fecha());
 
             if(liga.partidos[i].estaJugando()){
-                this.partidos[i].regustrarResultado(
+                this.partidos[i].registrarResultado(
                     liga.partidos[i].golesLocal(), 
                     liga.partidos[i].golesVisitante()
                 );

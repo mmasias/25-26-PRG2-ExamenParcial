@@ -62,7 +62,7 @@ class Partido {
 
     public boolean equals(Partido partido){
         assert partido != null;
-        return this.local.tieneMismoNombre(partido.loocal.nombre()) &&
+        return this.local.tieneMismoNombre(partido.local.nombre()) &&
                 this.visitante.tieneMismoNombre(partido.visitante.nombre()) &&
                 this.fecha.equals(partido.fecha);
     }

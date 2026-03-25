@@ -72,7 +72,7 @@ class Equipo {
     }
 
     public String toString(){
-        return  nombre = + " - " + color + " - " + numeroJugadores + " jugadores - " + puntos + " pts"; 
+        return nombre + " - " + color + " - " + numeroJugadores + " jugadores - " + puntos + " pts";
     }
 
     public void mostrar(){
