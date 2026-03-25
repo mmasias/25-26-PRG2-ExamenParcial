@@ -15,5 +15,15 @@ public class PruebaLiga {
         Partido p1 = new Partido(cracks, byteFC, new Fecha (1, 3, 2025));
         Partido p2 = new Partido(compiladores, cracks, new Fecha (8, 3, 2025));
         Partido p3 = new Partido(byteFC, compiladores, new Fecha (15, 3, 2025));
+
+        liga.programarPartido(p1);
+        liga.programarPartido(p2);
+        liga.programarPartido(p3);
+
+        liga.registrarResultado(p1, 3, 1);
+        liga.registrarResultado(p2, 2, 2);
+
+        liga.mostrarClasificacion();
+        liga.mostrarPartidosPendientes();
     }
 }
