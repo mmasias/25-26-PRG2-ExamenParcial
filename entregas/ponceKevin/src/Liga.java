@@ -19,6 +19,8 @@ public class Liga {
     }
 
     public void programarPartido(Partido partido) {
+        assert partido != null : "partido no puede ser null";
+        partidos.add(partido);
     
     }
 
