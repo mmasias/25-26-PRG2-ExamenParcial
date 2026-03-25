@@ -115,8 +115,12 @@ class Liga {
         }
     }
 
-    public String toString(){}
+    public String toString(){
+        return nombre + " - equipos: " + numeroEquipos + " - partidos: " + numeroPartidos;
+    }
 
-    public void mostrar()
+    public void mostrar(){
+        System.out.println(toString());
+    }
 
 }
