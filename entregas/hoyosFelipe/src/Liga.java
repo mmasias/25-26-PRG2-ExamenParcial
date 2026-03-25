@@ -164,4 +164,9 @@ class Liga {
             }
         }
 
+    private void intercambiar(Equipo[] clasificacion, int i, int j){
+        Equipo aux = clasificacion[i];
+        clasificacion[i] = clasificacion[j];
+        clasificacion[j] = aux;
+    }
 }
