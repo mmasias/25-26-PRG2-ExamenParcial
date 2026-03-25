@@ -11,7 +11,7 @@ class Partido {
         assert local != null;
         assert visitante != null;
         assert fecha != null;
-        assert !local.tieneMismoNombre(visitante);
+        assert !local.tieneMismoNombre(visitante.nombre());
 
         this.local = local.clone();
         this.visitante = visitante.clone();
