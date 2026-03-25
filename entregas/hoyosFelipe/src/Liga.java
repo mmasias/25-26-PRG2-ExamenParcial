@@ -101,7 +101,13 @@ class Liga {
         }
     }
 
-    public void mostrarPartidosPendientes()
+    public void mostrarPartidosPendientes(){
+        for (int i =0; i < numeroPartidos; i++) {
+            if (partidos[i].estaPendiente()) {
+                partidos[i].mostrar();
+            }
+        }
+    }
 
     public void mostrarPartidos()
 
