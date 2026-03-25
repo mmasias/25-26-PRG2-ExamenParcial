@@ -65,7 +65,7 @@ public class Partido {
     }
 
     public String toString() {
-        
+        return equipo1.toString() + " vs " + equipo2.toString() + " | Fecha: " + fecha.toString() + " | Goles: " + golesEquipo1 + "-" + golesEquipo2;
     }
 
 }
