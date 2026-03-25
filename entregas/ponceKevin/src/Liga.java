@@ -109,26 +109,8 @@ public class Liga {
     }
 
     private int pedirGoles(Scanner scanner, int numeroEquipo) {
-        int goles = -1;
-        boolean entradaValida = false;
-        
-        while (!entradaValida) {
-            try {
-                System.out.print("Ingrese goles del equipo " + numeroEquipo + ": ");
-                goles = scanner.nextInt();
-                
-                if (goles < 0) {
-                    System.out.println("Los goles no pueden ser negativos. Intente nuevamente.");
-                } else {
-                    entradaValida = true;
-                }
-            } catch (Exception e) {
-                System.out.println("Entrada inválida. Ingrese un número entero.");
-                scanner.nextLine();
-            }
-        }
-        
-        return goles;
+        System.out.print("Ingrese goles del equipo " + numeroEquipo + ": ");
+        return scanner.nextInt();
     }
 
     private void registrarGolesEnPartido(Partido partido, int golesEquipo1, int golesEquipo2) {
