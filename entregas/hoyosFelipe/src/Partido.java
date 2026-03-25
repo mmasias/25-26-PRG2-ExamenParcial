@@ -76,7 +76,14 @@ class Partido {
         this.jugado = true;
     }
 
-    public String toString(){}
+    public String toString(){
+        if (estaPendiente()) {
+            return local.nombre() + " vs " + visitante.nombre() + " - " + fecha + " - Pendiente";
+        } 
+        return local.nombre() + " vs " + visitante.nombre() + " - " + fecha + " - " + golesLocal + ":" + golesVisitante;
+    }
 
-    public void mostrar(){}
+    public void mostrar(){
+        System.out.println(toString());
+    }
 }
