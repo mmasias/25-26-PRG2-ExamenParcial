@@ -43,7 +43,17 @@ class Liga {
         return numeroPartidos;
     }
 
-    public int numeroPartidosPendientes()
+    public int numeroPartidosPendientes(){
+        int pendientes = 0;
+
+        for (int i = 0; i < numeroPartidos; i++) {
+            if(partidos[i].estaPendiente()) {
+                pendientes++;
+            }
+        }
+        
+        return pendientes;
+    }
 
     public boolean equals(Liga liga)
 
