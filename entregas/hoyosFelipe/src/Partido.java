@@ -69,10 +69,16 @@ class Equipo {
         this.puntos += puntos;
     }
 
-    public void reiniciarPuntos()
+    public void reiniciarPuntos(){
+        puntos = 0;
+    }
 
-    public String toString()
+    public String toString(){
+        return  nombre = + " - " + color + " - " + numeroJugadores + " jugadores - " + puntos + " pts"; 
+    }
 
-    public void mostrar()
+    public void mostrar(){
+        System.out.println(this.toString());
+    }
 
 }
