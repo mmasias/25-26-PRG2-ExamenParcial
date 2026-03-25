@@ -31,11 +31,17 @@ class Liga {
         return new Liga(this);
     }
 
-    public String nombre()
+    public String nombre(){
+        return nombre;
+    }
 
-    public int numeroEquipos()
+    public int numeroEquipos(){
+        return numeroEquipos;
+    }
 
-    public int numeroPartidos()
+    public int numeroPartidos(){
+        return numeroPartidos;
+    }
 
     public int numeroPartidosPendientes()
 
