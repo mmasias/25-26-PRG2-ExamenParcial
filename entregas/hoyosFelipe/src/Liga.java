@@ -149,8 +149,19 @@ class Liga {
         for (int i = 0; i < numeroEquipos; i++) {
             copia[i] = equipos[i].clone();
         }
-        
+
         return copia;
     }
+
+    private void ordenarPorPuntos(Equipo[] clasificacion){
+        for (int i = 0; i < clasificacion.length - 1; i++) {
+            for (int j = i + 1 ; j < clasificacion.length - 1; j++) {
+                     if (clasificacion[j].puntos() < clasificacion[i].puntos()) {
+                         intercambiar(clasificacion, i, j);
+                     }
+
+                }
+            }
+        }
 
 }
