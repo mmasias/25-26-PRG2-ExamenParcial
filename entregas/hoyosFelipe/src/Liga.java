@@ -1,26 +1,39 @@
-Package vistas.Liga;
+package vistas.liga;
 
 class Liga {
-    public Liga(String nombre) {
-  }
+    
+    public Liga(String nombre)
 
-  public Liga() {
-  }
+    public Liga()
 
-  Public Liga(Liga liga) {
-  }
+    public Liga(Liga liga)
 
-  Publi Liga clone(){
+    public Liga clone()
 
-  }
+    public String nombre()
 
-  Public String nombre() {
-  }
+    public int numeroEquipos()
 
+    public int numeroPartidos()
 
+    public int numeroPartidosPendientes()
 
+    public boolean equals(Liga liga)
 
+    public void agregarEquipo(Equipo equipo)
 
+    public void programarPartido(Equipo local, Equipo visitante, Fecha fecha)
 
+    public void registrarResultado(Partido partido, int golesLocal, int golesVisitante)
+
+    public void mostrarClasificacion()
+
+    public void mostrarPartidosPendientes()
+
+    public void mostrarPartidos()
+
+    public String toString()
+
+    public void mostrar()
 
 }
