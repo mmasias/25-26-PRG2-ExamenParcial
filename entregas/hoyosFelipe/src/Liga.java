@@ -1,4 +1,10 @@
 class Liga {
+
+    private String nombre;
+    private Equipo[] equipos;
+    private Partido[] partidos;
+    private int numeroEquipos;
+    private int numeroPartidos;
     
     public Liga(String nombre)
 
