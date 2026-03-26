@@ -10,8 +10,14 @@ class Vehiculo {
         this.tipoVehiculo = tipoVehiculo;
     }
 
-    public void mostrarDatos(){}
+    public void mostrarDatos(){
+        System.out.println("Vehículo: " + this.modelo + "[ " + this.matricula + " ]");
+    }
 
-    public void eliminarVehiculo(){}
+    public void eliminarVehiculo(){
+        this.matricula = null;
+        this.modelo = null;
+        this.tipoVehiculo = 0;
+    }
     
 }
