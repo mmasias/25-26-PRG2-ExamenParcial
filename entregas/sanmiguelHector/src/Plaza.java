@@ -10,7 +10,9 @@ class Plaza {
         this.ocupada = ocupada;
     }
 
-    public boolean estaOcupada(){}
+    public boolean estaOcupada(){
+        return this.ocupada;
+    }
 
     public int precioPlaza(){}
 
