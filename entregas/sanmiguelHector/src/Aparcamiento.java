@@ -6,6 +6,9 @@ class Aparcamiento {
     private int totalFacturado = 0;
     
     public Aparcamiento(int numeroPlazasNormal, int numeroPlazasElectrico, int numeroPlazasMoto, String nombreAparcamiento){
+        assert (numeroPlazasNormal >= 0 || numeroPlazasElectrico >= 0 || numeroPlazasMoto >= 0) 
+        : "El número de plazas introducido no es válido";
+        
         this.nombreAparcamiento = nombreAparcamiento;
         this.totalPlazas = numeroPlazasNormal + numeroPlazasElectrico + numeroPlazasMoto;
         this.plazas = new Plaza[this.totalPlazas];
