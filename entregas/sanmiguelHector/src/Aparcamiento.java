@@ -62,5 +62,4 @@ class Aparcamiento {
     public int dineroFacturado(){
         return this.totalFacturado;
     }
-
 }
