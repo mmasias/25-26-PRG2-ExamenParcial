@@ -35,7 +35,8 @@ class Aparcamiento {
     public void vehiculoLLego(Vehiculo vehiculo){
         for (int i = 0; i < this.plazas.length; i++){
             Plaza plazaActual = this.plazas[i];
-            
+            plazaActual.ocuparPlaza(vehiculo.matricula());
+            System.out.println("Vehículo aparcado");
         }
     }
 

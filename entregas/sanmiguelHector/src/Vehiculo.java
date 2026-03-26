@@ -20,5 +20,9 @@ class Vehiculo {
         this.modelo = null;
         this.tipoVehiculo = 0;
     }
+
+    public String matricula(){
+        return this.matricula;
+    }
     
 }
