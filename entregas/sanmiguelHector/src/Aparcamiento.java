@@ -48,13 +48,17 @@ class Aparcamiento {
 
     public void vehiculoSeFue(Vehiculo vehiculo, int horaLlegada, int horaSalida){
         for (int i = 0; i < this.plazas.length; i++){
-            Ticket ticket = new Ticket(horaLlegada, horaSalida, this.plazas[i], vehiculo);
-            ticket.mostrarTicket();
+            if (this.plazas[i].estaOcupada() && vehiculo.matricula().equals(this.plazas[i].quienOcupaPlaza())){
+                Ticket ticket = new Ticket(horaLlegada, horaSalida, this.plazas[i], vehiculo);
+                ticket.mostrarTicket();
 
-            this.totalFacturado += ticket.precioTotalEstancia();
+                this.totalFacturado += ticket.precioTotalEstancia();
 
-            this.plazas[i].liberarPlaza();
-            vehiculo.eliminarVehiculo();
+                this.plazas[i].liberarPlaza();
+                vehiculo.eliminarVehiculo();
+
+                break;
+            }
         }
     }
 
