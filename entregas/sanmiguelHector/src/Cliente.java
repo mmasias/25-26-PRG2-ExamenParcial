@@ -18,6 +18,11 @@ class Cliente {
         parkingUNEAT.vehiculoLLego(teslaCybertruck);
         parkingUNEAT.vehiculoLLego(yamaha);
 
+        System.out.println("------Mostrar disponibilidad actual------");
+        parkingUNEAT.mostrarDatos();
+
+        System.out.println("------Registrar salidas de vehículos------");
+        parkingUNEAT.vehiculoSeFue(seatIbiza, 10, 17);
 
     }
 }
