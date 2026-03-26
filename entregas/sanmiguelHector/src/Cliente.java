@@ -8,13 +8,15 @@ class Cliente {
         Vehiculo teslaCybertruck = new Vehiculo("8765 JBD", 2, "Tesla Cybertruck");
         Vehiculo yamaha = new Vehiculo("3377 KTL", 3, "Yamaha");
 
-        
 
+        System.out.println("------Iniciando la simulación------");
+        parkingUNEAT.mostrarDatos();
 
-
-
-
-
+        System.out.println("------Registrando nuevas entradas------");
+        parkingUNEAT.vehiculoLLego(seatIbiza);
+        parkingUNEAT.vehiculoLLego(fordFiesta);
+        parkingUNEAT.vehiculoLLego(teslaCybertruck);
+        parkingUNEAT.vehiculoLLego(yamaha);
 
 
     }
