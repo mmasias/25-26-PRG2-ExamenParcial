@@ -1,4 +1,4 @@
-Class Usuario {
+class Usuario {
     private String nombre;
     private String dni;
     private String direccion;
@@ -9,12 +9,12 @@ Class Usuario {
         this.direccion = direccion;
     }
 
-    public Usuario(nombre, dni){
-        this(nombre, dni, 'No especificada');
+    public Usuario(String nombre, String dni){
+        this(nombre, dni, "No especificada");
     }
 
     public void mostrar(){
-        Console.writeLine("Nombre del usuario: " + nombre + " dni: " + dni + " direccion: " + direccion);
+        System.out.println("Nombre del usuario: " + nombre + " dni: " + dni + " direccion: " + direccion);
     }
 
     public void actualizarNombre(String nombre){

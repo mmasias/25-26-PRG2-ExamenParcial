@@ -16,4 +16,10 @@ class HistorialPrestamo {
         this.prestamos = nuevoArreglo;
     }
 
+    public void mostrarHistorial() {
+        for (Prestamo prestamo : prestamos) {
+            prestamo.mostrar();
+        }
+    }
+
 }

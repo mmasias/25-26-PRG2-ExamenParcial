@@ -1,4 +1,4 @@
-class Libro{
+class Libro {
     private Biblioteca biblioteca;
     private Usuario[] usuarios;
     private String nombre;
@@ -28,11 +28,10 @@ class Libro{
     }
 
     public void mostrar(){
-        console.writeLine("Libro: " + this.nombre + " estado: " + this.estado);
-        console.writeLine("Biblioteca: " + this.biblioteca);
-        console.writeLine("Usuarios: ");
-        for (Usuario usuario : usuarios) {
-            console.writeLine(usuario);
-        }
+        System.out.println("Libro: " + this.nombre + " estado: " + this.estado);
+        System.out.println("Usuarios (Autores/Involucrados): ");
+            for (Usuario usuario : usuarios) {
+                usuario.mostrar();
+            }
     }
 }

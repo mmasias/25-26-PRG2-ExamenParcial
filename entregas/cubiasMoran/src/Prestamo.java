@@ -1,3 +1,4 @@
+import java.util.Date;
 class Prestamo{
     private Usuario usuario;
     private Libro libro;
@@ -14,33 +15,51 @@ class Prestamo{
     }
 
     public void actualizarUsuario(Usuario usuario){
-        this.usuario = usuario
+        this.usuario = usuario;
     }
 
     public void actualizarLibro(Libro libro){
-        this.libro = libro
+        this.libro = libro;
     }
 
     public void actualizarFechaInicio(Date fechaInicio){
-        this.fechaInicio = fechaInicio
+        this.fechaInicio = fechaInicio;
     }
 
     public void actualizarFechaFin(Date fechaFin){
-        this.fechaFin = fechaFin
+        this.fechaFin = fechaFin;
     }
 
     public void actualizarEstado(String estado){
-        this.estado = estado
+        this.estado = estado;
     }
 
     public void mostrar(){
-        console.writeLine("Prestamo: ");
-        console.writeLine("Usuario: " + this.usuario);
-        console.writeLine("Libro: " + this.libro);
-        console.writeLine("Fecha de inicio: " + this.fechaInicio);
-        console.writeLine("Fecha de fin: " + this.fechaFin);
-        console.writeLine("Estado: " + this.estado);
+        System.out.println("Prestamo: ");
+        System.out.println("Usuario: " + this.usuario);
+        System.out.println("Libro: " + this.libro);
+        System.out.println("Fecha de inicio: " + this.fechaInicio);
+        System.out.println("Fecha de fin: " + this.fechaFin);
+        System.out.println("Estado: " + this.estado);
     }
 
+    public int calcularCantidadDiasRetrasado(Date fechaDevolucion){
+        int diaDevolucion = fechaDevolucion.getDate();
+        int mesDevolucion = fechaDevolucion.getMonth();
+        int anioDevolucion = fechaDevolucion.getYear();
+        int diaFin = fechaFin.getDate();
+        int mesFin = fechaFin.getMonth();
+        int anioFin = fechaFin.getYear();
+        int totalDiasDevolucion = (anioDevolucion * 360) + (mesDevolucion * 30) + diaDevolucion;
+        int totalDiasFin = (anioFin * 360) + (mesFin * 30) + diaFin;
+
+        int retraso = totalDiasDevolucion - totalDiasFin;
+
+        if (retraso > 0) {
+            return retraso;
+        }
+        
+        return 0;
+    }
 }
     
