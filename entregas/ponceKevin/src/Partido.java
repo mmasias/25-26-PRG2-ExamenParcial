@@ -14,8 +14,8 @@ public class Partido {
         this.fecha = fecha;        
     }
 
-    public void aumentarGoles(int numeroEquipo, int cantidDeGoles) {
-        aumentarGolesEnEquipo(numeroEquipo, cantidDeGoles);
+    public void aumentarGoles(int numeroEquipo, int cantidadDeGoles) {
+        aumentarGolesEnEquipo(numeroEquipo, cantidadDeGoles);
     }
 
     public void aumentarGoles(int numeroEquipo) {
