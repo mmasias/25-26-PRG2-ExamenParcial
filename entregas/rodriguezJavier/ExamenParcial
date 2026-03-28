@@ -178,3 +178,17 @@ class Usuario {
         this(dni, nombre, "Sin dirección");
     }
 }
+
+class Usuario {
+    public String obtenerDni() {
+        return dni;
+    }
+    
+    public String obtenerNombre() {
+        return nombre;
+    }
+    
+    public String obtenerDireccion() {
+        return direccion;
+    }
+}
