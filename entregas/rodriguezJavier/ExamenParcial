@@ -38,3 +38,25 @@ class Prestamo {
     public boolean estaActivo();
     public String toString();
 }
+
+public class BibliotecaMunicipal{
+    public static void main(String[] args) {
+        Libro libro1 = new Libro("Don Quijote", "Cervantes", "B001");
+        Libro libro2 = new Libro("Cien años de soledad", "García Márquez", "B002");
+
+        Usuario usuario1 = new Usuario("12345678A", "Ana García", "Calle juncal 9");
+        Usuario usuario2 = new Usuario("87654321B", "Juan Pérez", "Calle adela bazo 16");
+
+
+
+        Prestamo prestamo1 = new Prestamo(libro1, usuario1, "01/03/2025");
+        libro1.prestar();
+        usuario1.agregarPrestamo(prestamo1);
+        Prestamo prestamo2 = new Prestamo(libro2, usuario2, "10/03/2025");
+        libro2.prestar();
+        usuario2.agregarPrestamo(prestamo2);
+
+        prestamo1.registrarDevolucion("15/03/2025");
+        libro1.devolver();
+    }
+}
