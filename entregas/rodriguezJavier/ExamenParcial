@@ -68,6 +68,18 @@ public class BibliotecaMunicipal{
                 System.out.println("- " + u.obtenerNombre() + " (" + u.obtenerDni() + ")");
             }
         }
+
+        System.out.println("\n=== Historial de préstamos de Ana García ===");
+        Prestamo[] historialAna = usuario1.obtenerHistorialPrestamos();
+        for (Prestamo p : historialAna) {
+            System.out.println(p.toString());
+        }
+        
+        System.out.println("\n=== Préstamos activos de Juan Pérez ===");
+        Prestamo[] activosJuan = usuario2.obtenerPrestamosActivos();
+        for (Prestamo p : activosJuan) {
+            System.out.println(p.toString());
+        }
         
     }
 }
