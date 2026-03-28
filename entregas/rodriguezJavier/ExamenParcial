@@ -143,12 +143,17 @@ class Libro {
 }
 
 class Libro {
-    
     public void prestar() {
         prestado = true;
     }
     
     public void devolver() {
         prestado = false;
+    }
+}
+
+class Libro {
+    public String toString() {
+        return titulo + " - " + autor + " (" + codigo + ")";
     }
 }
