@@ -79,7 +79,6 @@ public class BibliotecaMunicipal{
         Prestamo[] activosJuan = usuario2.obtenerPrestamosActivos();
         for (Prestamo p : activosJuan) {
             System.out.println(p.toString());
-        }
-        
+        } 
     }
 }
