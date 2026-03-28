@@ -122,3 +122,22 @@ class Libro {
         this(titulo, autor, "SIN-CODIGO");
     }
 }
+
+class Libro {
+    
+    public String obtenerTitulo() {
+        return titulo;
+    }
+    
+    public String obtenerAutor() {
+        return autor;
+    }
+    
+    public String obtenerCodigo() {
+        return codigo;
+    }
+    
+    public boolean estaPrestado() {
+        return prestado;
+    }
+}
