@@ -82,3 +82,25 @@ public class BibliotecaMunicipal{
         } 
     }
 }
+
+class Libro {
+    private String titulo;
+    private String autor;
+    private String codigo;
+    private boolean prestado;
+}
+
+class Usuario {
+    private String dni;
+    private String nombre;
+    private String direccion;
+    private Prestamo[] prestamos;
+    private int contadorPrestamos;
+}
+
+class Prestamo {
+    private Libro libro;
+    private Usuario usuario;
+    private String fechaPrestamo;
+    private String fechaDevolucion;
+}
