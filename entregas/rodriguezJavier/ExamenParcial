@@ -310,3 +310,11 @@ class Prestamo {
         return retraso > 0 ? retraso : 0;
     }
 }
+class Prestamo {
+    public boolean estaVencido(String fechaActual) {
+        if (!estaActivo()) {
+            return false;
+        }
+        return calcularDiasRetraso(fechaActual) > 0;
+    }
+}
