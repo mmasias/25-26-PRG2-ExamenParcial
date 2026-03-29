@@ -1,0 +1,303 @@
+class Libro{
+    public Libro(String titulo, String autor, String codigo):
+    public Libro(String titulo, String autor);
+
+    public String obtenerTitulo();
+    public String obtenerAutor();
+    public String obtenerCodigo();
+    public boolean estaPrestado();
+    public void prestar();
+    public void devolver();
+    public String toString();
+}
+
+class Usuario {
+    public Usuario(String dni, String nombre, String direccion);
+    public Usuario(String dni, String nombre);
+
+    public String obtenerDNi();
+    public String obtenerNombre();
+    public String obtenerDireccion();
+    public void agregarPrestamo(Prestamo prestamo);
+    public Prestamo[] obtenerPrestamosActivos();
+    public Prestamo[] obtenerHistorialPrestamos();
+    public boolean tienePrestamosVencidos();
+    public String toString();
+}
+
+class Prestamo {
+    public Prestamo(Libro libro, Usuario usuario, String fechaPrestamo);
+
+    public Libro obtenerLibro();
+    public Usuario obtenerUsuario();
+    public String obtenerFechaPrestamo();
+    public String obtenerFechaDevolucion();
+    public void registrarDevolucion(String fechaDevolucion);
+    public boolean estaVencido(String fechaActual);
+    public int calcularDiasRetraso(String fechaActual);
+    public boolean estaActivo();
+    public String toString();
+}
+
+public class BibliotecaMunicipal{
+    public static void main(String[] args) {
+        Libro libro1 = new Libro("Don Quijote", "Cervantes", "B001");
+        Libro libro2 = new Libro("Cien años de soledad", "García Márquez", "B002");
+
+        Usuario usuario1 = new Usuario("12345678A", "Ana García", "Calle juncal 9");
+        Usuario usuario2 = new Usuario("87654321B", "Juan Pérez", "Calle adela bazo 16");
+
+        Libro[] libros = new Libro[] {libro1, libro2};
+        Usuario[] usuarios = new Usuario[] {usuario1, usuario2};
+
+        Prestamo prestamo1 = new Prestamo(libro1, usuario1, "01/03/2025");
+        libro1.prestar();
+        usuario1.agregarPrestamo(prestamo1);
+        Prestamo prestamo2 = new Prestamo(libro2, usuario2, "10/03/2025");
+        libro2.prestar();
+        usuario2.agregarPrestamo(prestamo2);
+
+        prestamo1.registrarDevolucion("15/03/2025");
+        libro1.devolver();
+
+        
+        String fechaActual = "25/03/2025";
+        System.out.println("=== Usuarios con préstamos vencidos ===");
+        for (Usuario u : usuarios) {
+            if (u.tienePrestamosVencidos()) {
+                System.out.println("- " + u.obtenerNombre() + " (" + u.obtenerDni() + ")");
+            }
+        }
+
+        System.out.println("\n=== Historial de préstamos de Ana García ===");
+        Prestamo[] historialAna = usuario1.obtenerHistorialPrestamos();
+        for (Prestamo p : historialAna) {
+            System.out.println(p.toString());
+        }
+        
+        System.out.println("\n=== Préstamos activos de Juan Pérez ===");
+        Prestamo[] activosJuan = usuario2.obtenerPrestamosActivos();
+        for (Prestamo p : activosJuan) {
+            System.out.println(p.toString());
+        } 
+    }
+}
+
+class Libro {
+    private String titulo;
+    private String autor;
+    private String codigo;
+    private boolean prestado;
+}
+
+class Usuario {
+    private String dni;
+    private String nombre;
+    private String direccion;
+    private Prestamo[] prestamos;
+    private int contadorPrestamos;
+}
+
+class Prestamo {
+    private Libro libro;
+    private Usuario usuario;
+    private String fechaPrestamo;
+    private String fechaDevolucion;
+}
+
+class Libro {
+    private String titulo;
+    private String autor;
+    private String codigo;
+    private boolean prestado;
+    
+    public Libro(String titulo, String autor, String codigo) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.codigo = codigo;
+        this.prestado = false;
+    }
+
+    public Libro(String titulo, String autor) {
+        this(titulo, autor, "SIN-CODIGO");
+    }
+    public String obtenerTitulo() {
+        return titulo;
+    }
+    
+    public String obtenerAutor() {
+        return autor;
+    }
+    
+    public String obtenerCodigo() {
+        return codigo;
+    }
+    
+    public boolean estaPrestado() {
+        return prestado;
+    }
+    public void prestar() {
+        prestado = true;
+    }
+    
+    public void devolver() {
+        prestado = false;
+    }
+
+    public String toString() {
+        return titulo + " - " + autor + " (" + codigo + ")";
+    }
+}
+class Usuario {
+    private String dni;
+    private String nombre;
+    private String direccion;
+    private Prestamo[] prestamos;
+    private int contadorPrestamos;
+    private static final int CAPACIDAD_MAXIMA = 50;
+    
+    public Usuario(String dni, String nombre, String direccion) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.prestamos = new Prestamo[CAPACIDAD_MAXIMA];
+        this.contadorPrestamos = 0;
+    }
+    
+    public Usuario(String dni, String nombre) {
+        this(dni, nombre, "Sin dirección");
+    }
+    public String obtenerDni() {
+        return dni;
+    }
+    
+    public String obtenerNombre() {
+        return nombre;
+    }
+    
+    public String obtenerDireccion() {
+        return direccion;
+    }
+    
+    public void agregarPrestamo(Prestamo prestamo) {
+        if (contadorPrestamos < CAPACIDAD_MAXIMA) {
+            prestamos[contadorPrestamos] = prestamo;
+            contadorPrestamos++;
+        }
+    }
+     public Prestamo[] obtenerPrestamosActivos() {
+        Prestamo[] activos = new Prestamo[contadorPrestamos];
+        int j = 0;
+        for (int i = 0; i < contadorPrestamos; i++) {
+            if (prestamos[i] != null && prestamos[i].estaActivo()) {
+                activos[j] = prestamos[i];
+                j++;
+            }
+        }
+        return redimensionarArray(activos, j);
+    }
+    
+    public Prestamo[] obtenerHistorialPrestamos() {
+        Prestamo[] historial = new Prestamo[contadorPrestamos];
+        for (int i = 0; i < contadorPrestamos; i++) {
+            historial[i] = prestamos[i];
+        }
+        return historial;
+    }
+    public boolean tienePrestamosVencidos() {
+        String fechaActual = obtenerFechaActual();
+        for (int i = 0; i < contadorPrestamos; i++) {
+            if (prestamos[i] != null && prestamos[i].estaActivo() && 
+                prestamos[i].estaVencido(fechaActual)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public String toString() {
+        return nombre + " (" + dni + ") - " + direccion;
+    }
+    
+    private String obtenerFechaActual() {
+        return "25/03/2025";
+    }
+    private Prestamo[] redimensionarArray(Prestamo[] original, int nuevoTamaño) {
+        Prestamo[] resultado = new Prestamo[nuevoTamaño];
+        for (int i = 0; i < nuevoTamaño; i++) {
+            resultado[i] = original[i];
+        }
+        return resultado;
+    }
+}
+class Prestamo {
+    private Libro libro;
+    private Usuario usuario;
+    private String fechaPrestamo;
+    private String fechaDevolucion;
+    private static final int DIAS_PRESTAMO = 14;
+    
+    public Prestamo(Libro libro, Usuario usuario, String fechaPrestamo) {
+        this.libro = libro;
+        this.usuario = usuario;
+        this.fechaPrestamo = fechaPrestamo;
+        this.fechaDevolucion = null;
+    }
+    public Libro obtenerLibro() {
+        return libro;
+    }
+    public Usuario obtenerUsuario() {
+        return usuario;
+    }
+    public String obtenerFechaPrestamo() {
+        return fechaPrestamo;
+    }
+    public String obtenerFechaDevolucion() {
+        return fechaDevolucion;
+    }
+    public void registrarDevolucion(String fechaDevolucion) {
+        this.fechaDevolucion = fechaDevolucion;
+    }
+    public boolean estaActivo() {
+        return fechaDevolucion == null;
+    }
+    public boolean estaVencido(String fechaActual) {
+        if (!estaActivo()) {
+            return false;
+        }
+        return calcularDiasRetraso(fechaActual) > 0;
+    }
+    public int calcularDiasRetraso(String fechaActual) {
+        if (!estaActivo()) {
+            return 0;
+        }
+        int diasPrestamo = convertirFechaADias(fechaPrestamo);
+        int diasActual = convertirFechaADias(fechaActual);
+        int retraso = diasActual - (diasPrestamo + DIAS_PRESTAMO);
+        return retraso > 0 ? retraso : 0;
+    }
+    public String toString() {
+        String estado = estaActivo() ? "ACTIVO" : "DEVUELTO";
+        String info = libro.obtenerTitulo() + " - " + usuario.obtenerNombre() +
+                      " | Préstamo: " + fechaPrestamo;
+        if (!estaActivo()) {
+            info += " | Devolución: " + fechaDevolucion;
+        }
+        info += " | Estado: " + estado;
+        if (estaActivo()) {
+            String fechaActual = "25/03/2025";
+            int retraso = calcularDiasRetraso(fechaActual);
+            if (retraso > 0) {
+                info += " | Retraso: " + retraso + " días";
+            }
+        }
+        return info;
+    }
+    private int convertirFechaADias(String fecha) {
+        String[] partes = fecha.split("/");
+        int dia = Integer.parseInt(partes[0]);
+        int mes = Integer.parseInt(partes[1]);
+        int anio = Integer.parseInt(partes[2]);
+        return (año * 365) + (mes * 30) + dia;
+    }
+}
