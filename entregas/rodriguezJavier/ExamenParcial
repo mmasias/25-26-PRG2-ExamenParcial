@@ -263,7 +263,7 @@ class Prestamo {
     }
     public boolean estaVencido(String fechaActual) {
         if (!estaActivo()) {
-            return flase;
+            return false;
         }
         return calcularDiasRetraso(fechaActual) > 0;
     }
