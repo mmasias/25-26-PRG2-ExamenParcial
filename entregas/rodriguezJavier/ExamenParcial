@@ -298,3 +298,15 @@ class Prestamo {
         return (anio * 365) + (mes * 30) + dia;
     }
 }
+
+class Prestamo {
+    public int calcularDiasRetraso(String fechaActual) {
+        if (!estaActivo()) {
+            return 0;
+        }
+        int diasPrestamo = convertirFechaADias(fechaPrestamo);
+        int diasActual = convertirFechaADias(fechaActual);
+        int retraso = diasActual - (diasPrestamo + DIAS_PRESTAMO);
+        return retraso > 0 ? retraso : 0;
+    }
+}
