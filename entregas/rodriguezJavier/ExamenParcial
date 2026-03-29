@@ -289,3 +289,12 @@ class Prestamo {
         return fechaDevolucion == null;
     }
 }
+class Prestamo {
+    private int convertirFechaADias(String fecha) {
+        String[] partes = fecha.split("/");
+        int dia = Integer.parseInt(partes[0]);
+        int mes = Integer.parseInt(partes[1]);
+        int anio = Integer.parseInt(partes[2]);
+        return (anio * 365) + (mes * 30) + dia;
+    }
+}
