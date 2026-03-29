@@ -255,3 +255,20 @@ class Usuario {
         return nombre + " (" + dni + ") - " + direccion;
     }
 }
+
+
+class Prestamo {
+    private Libro libro;
+    private Usuario usuario;
+    private String fechaPrestamo;
+    private String fechaDevolucion;
+    private static final int DIAS_PRESTAMO = 14;
+    
+    public Prestamo(Libro libro, Usuario usuario, String fechaPrestamo) {
+        this.libro = libro;
+        this.usuario = usuario;
+        this.fechaPrestamo = fechaPrestamo;
+        this.fechaDevolucion = null;
+    }
+}
+
