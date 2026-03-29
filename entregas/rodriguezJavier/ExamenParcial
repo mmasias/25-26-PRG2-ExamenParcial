@@ -232,3 +232,8 @@ class Usuario {
         return redimensionarArray(activos, j);
     }
 }
+class Usuario {
+    private String obtenerFechaActual() {
+        return "25/03/2025";
+    }
+}
