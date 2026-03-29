@@ -271,7 +271,6 @@ class Prestamo {
         this.fechaDevolucion = null;
     }
 }
-
 class Prestamo {
     public Libro obtenerLibro() {
         return libro;
@@ -284,5 +283,13 @@ class Prestamo {
     }
     public String obtenerFechaDevolucion() {
         return fechaDevolucion;
+    }
+}
+class Prestamo {
+    public void registrarDevolucion(String fechaDevolucion) {
+        this.fechaDevolucion = fechaDevolucion;
+    }
+    public boolean estaActivo() {
+        return fechaDevolucion == null;
     }
 }
