@@ -200,3 +200,13 @@ class Usuario {
         }
     }
 }
+
+class Usuario {
+    public Prestamo[] obtenerHistorialPrestamos() {
+        Prestamo[] historial = new Prestamo[contadorPrestamos];
+        for (int i = 0; i < contadorPrestamos; i++) {
+            historial[i] = prestamos[i];
+        }
+        return historial;
+    }
+}
