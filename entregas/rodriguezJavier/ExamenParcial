@@ -117,14 +117,10 @@ class Libro {
         this.codigo = codigo;
         this.prestado = false;
     }
-    
+
     public Libro(String titulo, String autor) {
         this(titulo, autor, "SIN-CODIGO");
     }
-}
-
-class Libro {
-
     public String obtenerTitulo() {
         return titulo;
     }
@@ -140,9 +136,6 @@ class Libro {
     public boolean estaPrestado() {
         return prestado;
     }
-}
-
-class Libro {
     public void prestar() {
         prestado = true;
     }
@@ -150,9 +143,7 @@ class Libro {
     public void devolver() {
         prestado = false;
     }
-}
 
-class Libro {
     public String toString() {
         return titulo + " - " + autor + " (" + codigo + ")";
     }
