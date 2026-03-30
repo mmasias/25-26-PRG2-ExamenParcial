@@ -21,7 +21,6 @@ public class Prestamo {
     }
 
     public String toString() {
-        // Variable renombrada por exigencia de calidad del Ingeniero
         String datosDelPrestamo = this.usuario.toString() + " toma " + this.libro.toString() + " el " + this.fechaPrestamo.toString();
         
         if (this.haDevuelto()) {
