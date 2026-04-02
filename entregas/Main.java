@@ -26,5 +26,11 @@ public class Main {
         cuenta2.retirar(200);   
         cuenta3.transferir(cuenta1, 500); 
 
+        System.out.println("Saldo cuenta1: " + cuenta1.getSaldo());
+
+        for (Movimiento m : cuenta1.getMovimientos()) {
+            System.out.println(m.getTipo() + " - " + m.getCantidad() + " - " + m.getFecha());
         }
+
     }
+}
