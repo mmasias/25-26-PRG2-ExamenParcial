@@ -1,6 +1,6 @@
 package Parte1;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -34,11 +34,29 @@ public class Cuenta {
         return cliente;
     }
 
-    public void asignarCliente(Cliente cliente);
+    public void asignarCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
-    public void ingresar(double cantidad);
-    public void retirar(double cantidad);
-    public void transferir(Cuenta destino, double cantidad);
+    public void ingresar(double cantidad) {
+        Saldo += cantidad;
+        movimientos.add(new Movimiento("Ingreso", cantidad, IBAN, null));
+    }
 
-    public List<Movimiento> getMovimientos();
+    public void retirar(double cantidad) {
+        Saldo -= cantidad;
+        movimientos.add(new Movimiento("Retirada", cantidad, IBAN, null));
+    }
+
+    public void transferir(Cuenta destino, double cantidad) {
+        this.Saldo -= cantidad;
+        destino.Saldo += cantidad;
+
+        movimientos.add(new Movimiento("Transferencia", cantidad, this.IBAN, destino.IBAN));
+    }
+
+    public List<Movimiento> getMovimientos() {
+        return movimientos;
+    }
+
 }
