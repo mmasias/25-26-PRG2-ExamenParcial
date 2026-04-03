@@ -1,5 +1,7 @@
 package Parte1;
 import java.util.List;
+import java.util.ArrayList;
+
 
 
 public class Cuenta {
@@ -9,12 +11,28 @@ public class Cuenta {
     private Cliente cliente;
     private List<Movimiento> movimientos;
 
-    public Cuenta(String IBAN, double Saldo, String TipoCuenta);
+   public Cuenta(String IBAN, double Saldo, String TipoCuenta) {
+        this.IBAN = IBAN;
+        this.Saldo = Saldo;
+        this.TipoCuenta = TipoCuenta;
+        this.movimientos = new ArrayList<>();
+    }
 
-    public String getIBAN();
-    public double getSaldo();
-    public String getTipoCuenta();
-    public Cliente getCliente();
+    public String getIBAN() {
+        return IBAN;
+    }
+
+    public double getSaldo() {
+        return Saldo;
+    }
+
+    public String getTipoCuenta() {
+        return TipoCuenta;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
 
     public void asignarCliente(Cliente cliente);
 
