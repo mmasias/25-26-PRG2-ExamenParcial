@@ -1,3 +1,8 @@
+import Parte1.Cuenta;
+import Parte1.Banco;
+import Parte1.Cliente;
+import Parte1.Movimiento;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -17,19 +22,19 @@ public class Main {
         banco.abrirCuenta(SegundaCuenta);
         banco.abrirCuenta(TerceraCuenta);
 
-        banco.asignarCuentaCliente(cuenta1, PrimeraCuenta);
-        banco.asignarCuentaCliente(cuenta2, SegundaCuenta);
-        banco.asignarCuentaCliente(cuenta3, TerceraCuenta);
+        banco.asignarCuentaCliente(PrimeraCuenta, PrimerCliente);
+        banco.asignarCuentaCliente(SegundaCuenta, SegundoCliente);
+        banco.asignarCuentaCliente(TerceraCuenta, PrimerCliente);
 
         
-        cuenta1.ingresar(1000); 
-        cuenta2.retirar(200);   
-        cuenta3.transferir(cuenta1, 500); 
+        PrimeraCuenta.ingresar(1000); 
+        SegundaCuenta.retirar(200);   
+        TerceraCuenta.transferir(PrimeraCuenta, 500); 
 
-        System.out.println("Saldo cuenta1: " + cuenta1.getSaldo());
+        System.out.println("Saldo cuenta1: " + PrimeraCuenta.getSaldo());
 
-        for (Movimiento m : cuenta1.getMovimientos()) {
-            System.out.println(m.getTipo() + " - " + m.getCantidad() + " - " + m.getFecha());
+        for (Movimiento m : PrimeraCuenta.getMovimientos()) {
+            System.out.println(m.getTipoCuenta() + " - " + m.getCantidad());
         }
 
     }
