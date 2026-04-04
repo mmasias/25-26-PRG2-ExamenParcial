@@ -1,15 +1,30 @@
 package Parte1;
+import java.time.LocalDate;
 
 public class Movimiento {
-    private String TipoCuenta; 
-    private double Cantidad;
-    private String IBANOrigen;
-    private String IBANDestino;
-    
+    private String tipo;
+    private double cantidad;
+    private String ibanOrigen;
+    private String ibanDestino;
+    private LocalDate fecha;
 
-    public Movimiento(String TipoCuenta, double Cantidad, String IBANOrigen, String IBANDestino);
+    public Movimiento(String tipo, double cantidad, String ibanOrigen, String ibanDestino) {
+        this.tipo = tipo;
+        this.cantidad = cantidad;
+        this.ibanOrigen = ibanOrigen;
+        this.ibanDestino = ibanDestino;
+        this.fecha = LocalDate.now();
+    }
 
-    public String getTipoCuenta();
-    public double getCantidad();
-   
+    public String getTipo() {
+        return tipo;
+    }
+
+    public double getCantidad() {
+        return cantidad;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
 }
