@@ -1,8 +1,3 @@
-import Parte1.Cuenta;
-import Parte1.Banco;
-import Parte1.Cliente;
-import Parte1.Movimiento;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -31,7 +26,7 @@ public class Main {
         SegundaCuenta.retirar(200);   
         TerceraCuenta.transferir(PrimeraCuenta, 500); 
 
-        System.out.println("Saldo cuenta1: " + PrimeraCuenta.getSaldo());
+        System.out.println("Saldo de la PrimerCuenta: " + PrimeraCuenta.getSaldo());
 
         for (Movimiento m : PrimeraCuenta.getMovimientos()) {
             System.out.println(m.getTipoCuenta() + " - " + m.getCantidad());
