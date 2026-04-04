@@ -27,9 +27,18 @@ public class Main {
         TerceraCuenta.transferir(PrimeraCuenta, 500); 
 
         System.out.println("Saldo de la PrimerCuenta: " + PrimeraCuenta.getSaldo());
+        
 
         for (Movimiento m : PrimeraCuenta.getMovimientos()) {
-            System.out.println(m.getTipoCuenta() + " - " + m.getCantidad());
+            System.out.println("Primera: " + m.getTipoCuenta() + " - " + m.getCantidad());
+        }
+
+        for (Movimiento m : SegundaCuenta.getMovimientos()) {
+            System.out.println("Segunda: " + m.getTipoCuenta() + " - " + m.getCantidad());
+        }
+
+        for (Movimiento m : TerceraCuenta.getMovimientos()) {
+            System.out.println("Tercera: " + m.getTipoCuenta() + " - " + m.getCantidad());
         }
 
     }
