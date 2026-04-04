@@ -31,7 +31,6 @@ Todos dentro de su carpeta personal
 - **Código limpio** — innegociable.
 - **Adecuado reparto de responsabilidades** entre módulos.
 - **Aplicación de lo visto en clases, en la asignatura, en el grado y en la vida**, en ese orden.
-
 ## Tenga en cuenta
 
 - **Planificar** antes de codificar (diagramas, esquemas, pseudocódigo).
